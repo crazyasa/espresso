@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -r /home/matt/CS326/EVM/Phase$1 ]; then
+  echo "Open"
+else
+  echo "Closed"
+fi
