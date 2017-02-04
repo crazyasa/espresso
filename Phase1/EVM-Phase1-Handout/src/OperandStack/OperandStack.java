@@ -2,6 +2,8 @@ package OperandStack;
 import Value.*;
 import java.io.*;
 import Utilities.Error;
+import java.util.*;
+
 /**
  * A stack for doing arithmetic and logic operations. Stack elements are of type {@link Value}.
  * @author   Matt B. Pedersen
@@ -18,11 +20,11 @@ public class OperandStack {
      * The internal stack holding the actual values. These values are of type {@link Value}.
      */
     // Hint, if you don't make it an array the toString() method wont work as it is ;-)
-    // YOUR CODE HERE
+    Value[] stack;
     /**
      * The stack pointer. The stack pointer always points to the next free location in the <a href="#stack">stack<a> array.
      */
-    // YOUR CODE HERE
+    int sp = 0;
     /**
      * Just a name to give to the stack - helps with debugging later.
      */
@@ -44,6 +46,8 @@ public class OperandStack {
 	stackNumber = stackNo;
 	stackNo++;
 
+    stack = new Value[size];
+    stackSize = size;
 	// YOUR CODE HERE
     }
 
@@ -58,7 +62,11 @@ public class OperandStack {
      * @param e An object of the {@link Value} type to be placed on the stack.
      */
     public void push(Value e) {
-	// YOUR CODE HERE
+        if ((sp + 1) >= stackSize){
+        throw new StackOverflowError(); 
+     }            
+	stack[sp]=e;
+    sp= sp + 1;
     }
 
     /**
@@ -74,6 +82,11 @@ public class OperandStack {
      */
     public Value pop() {
 	// YOUR CODE HERE
+    if (sp == 0) {
+        //throw Error("Stack is empty. Nothing to Pop.");
+    }        
+        sp = sp - 1;
+        return stack[sp];
     }
     
     /** 
@@ -85,6 +98,10 @@ public class OperandStack {
      */
     public Value peek(int n) {
 	// YOUR CODE HERE
+    if (n<1 || n>sp){
+        //throw Error("You're trying to access an unavailable index.");    
+    }
+        return stack[sp-n];
     }
 	    
     /**

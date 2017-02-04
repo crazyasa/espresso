@@ -8,8 +8,27 @@ public class EVM {
       // This is a small example of how to use the stack
       
       OperandStack operandStack = new OperandStack(100, "OperandStack Test");
+      
+      
+      
+      
+      operandStack.push(new IntegerValue(30));
+      operandStack.push(new IntegerValue(12));
+      operandStack.push(new IntegerValue(5));
+      operandStack.push(new IntegerValue(1));
 
-      operandStack.push(new IntegerValue(100));
+      //System.out.println(operandStack.peek(0));
+      System.out.println(operandStack.pop());
+      System.out.println(operandStack.pop());
+      System.out.println(operandStack.pop());
+      System.out.println(operandStack.pop());
+      System.out.println(operandStack.pop());
+      
+      //testing for error checking
+      operandStack.push(new IntegerValue(1));
+      System.out.println(operandStack.pop());
+
+     /* operandStack.push(new IntegerValue(100));
       operandStack.push(Value.makeDefaultValueFromSignature("Z"));
       operandStack.push(Value.makeValue("Hello"));
 
@@ -36,7 +55,7 @@ public class EVM {
       System.out.println(operandStack.pop()); // ===> true
       System.out.println(operandStack.pop()); // ===> 100
       System.out.println(operandStack.pop()); // ===> Error message & program termination
-      System.out.println("This line should never be printed out");
+      System.out.println("This line should never be printed out"); */
 
       // Remove the code above and replace it by your own tests from the assignment
 
