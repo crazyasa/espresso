@@ -8,4 +8,4 @@ on csgfms.cs.unlv.edu
 Name                    Student ID              e-mail
 ----------------------------------------------------------------------
 Jean-Luc Sandqvist      2000596889              sandqvis@unlv.nevada.edu
-Edgar Sida
+Edgar Sida              5002384538              sidae1@unlv.nevada.edu
